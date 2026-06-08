@@ -6,21 +6,17 @@
   <meta name="description" content="HRSHO — Professional CS2 Esports Team" />
   <title>HRSHO | CS2 Esports Team</title>
 
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
 
   <!-- ==================== NAVBAR ==================== -->
   <nav class="navbar" id="navbar">
@@ -30,7 +26,6 @@
         <span class="nav-logo-text">HRSHO</span>
       </a>
 
-
       <ul class="nav-links" id="nav-links">
         <li><a href="#about" class="nav-link" data-key="nav_about">О команде</a></li>
         <li><a href="#roster" class="nav-link" data-key="nav_roster">Состав</a></li>
@@ -38,7 +33,6 @@
         <li><a href="#social" class="nav-link" data-key="nav_social">Соцсети</a></li>
         <li><a href="#contact" class="nav-link" data-key="nav_contact">Контакты</a></li>
       </ul>
-
 
       <div class="nav-right">
         <div class="lang-switcher">
@@ -55,13 +49,11 @@
     </div>
   </nav>
 
-
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="hero">
     <canvas id="particles-canvas"></canvas>
     <div class="hero-bg-lines"></div>
     <div class="hero-overlay"></div>
-
 
     <div class="hero-content">
       <div class="hero-logo-wrap">
@@ -75,3 +67,164 @@
         <a href="#about" class="btn btn-primary" data-key="hero_btn_about">О команде</a>
         <a href="#roster" class="btn btn-outline" data-key="hero_btn_roster">Наш состав</a>
       </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label" data-key="stat_players">Игроков</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num">3+</span>
+          <span class="stat-label" data-key="stat_trophies">Трофеев</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num">2024</span>
+          <span class="stat-label" data-key="stat_founded">Основана</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span data-key="scroll_down">SCROLL</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section about-section" id="about">
+    <div class="section-bg-pattern"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-key="about_tag">// О НАС</span>
+        <h2 class="section-title" data-key="about_title">О КОМАНДЕ</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text-block">
+          <p class="about-text" data-key="about_text">
+            HRSHO — киберспортивная команда по Counter-Strike 2, объединяющая игроков с высоким уровнем игры, дисциплиной и стремлением к победе. Мы не просто играем — мы доминируем.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <i class="fas fa-crosshairs feature-icon"></i>
+              <div>
+                <h4 data-key="feat1_title">Точность</h4>
+                <p data-key="feat1_desc">Каждый выстрел — результат тренировок</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <i class="fas fa-chess feature-icon"></i>
+              <div>
+                <h4 data-key="feat2_title">Стратегия</h4>
+                <p data-key="feat2_desc">Тактическое превосходство на каждой карте</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <i class="fas fa-users feature-icon"></i>
+              <div>
+                <h4 data-key="feat3_title">Командная работа</h4>
+                <p data-key="feat3_desc">Победа достигается вместе</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-logo-container">
+            <img src="logo.png" alt="HRSHO" class="about-logo" />
+            <div class="about-logo-ring ring-1"></div>
+            <div class="about-logo-ring ring-2"></div>
+            <div class="about-logo-ring ring-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ROSTER ==================== -->
+  <section class="section roster-section" id="roster">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-key="roster_tag">// СОСТАВ</span>
+        <h2 class="section-title" data-key="roster_title">НАШ СОСТАВ</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="roster-grid" id="roster-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ACHIEVEMENTS ==================== -->
+  <section class="section achievements-section" id="achievements">
+    <div class="section-bg-pattern"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-key="ach_tag">// ТРОФЕИ</span>
+        <h2 class="section-title" data-key="ach_title">ДОСТИЖЕНИЯ</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="achievements-grid" id="achievements-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOCIAL MEDIA ==================== -->
+  <section class="section social-section" id="social">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-key="social_tag">// СЛЕДИ ЗА НАМИ</span>
+        <h2 class="section-title" data-key="social_title">СОЦИАЛЬНЫЕ СЕТИ</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="social-grid" id="social-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section contact-section" id="contact">
+    <div class="section-bg-pattern"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-key="contact_tag">// СВЯЗЬ</span>
+        <h2 class="section-title" data-key="contact_title">КОНТАКТЫ</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card glass-card">
+          <div class="contact-icon"><i class="fab fa-discord"></i></div>
+          <h3 class="contact-label" data-key="contact_discord_label">Discord</h3>
+          <p class="contact-value" id="contact-discord">discord.gg/hrsho</p>
+        </div>
+        <div class="contact-card glass-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <h3 class="contact-label" data-key="contact_email_label">Email</h3>
+          <p class="contact-value" id="contact-email">manager@hrsho.gg</p>
+        </div>
+        <div class="contact-card glass-card">
+          <div class="contact-icon"><i class="fas fa-user-tie"></i></div>
+          <h3 class="contact-label" data-key="contact_manager_label">Manager</h3>
+          <p class="contact-value" id="contact-manager">contact@hrshoclan.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="logo.png" alt="HRSHO" class="footer-logo-img" />
+        <span class="footer-logo-text">HRSHO</span>
+      </div>
+      <p class="footer-copy">© 2025 HRSHO Esports Team. All Rights Reserved.</p>
+      <p class="footer-sub" data-key="footer_sub">Профессиональная киберспортивная организация</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

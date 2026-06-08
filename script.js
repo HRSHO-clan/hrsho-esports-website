@@ -49,7 +49,7 @@ const translations = {
     contact_title:      'КОНТАКТЫ',
     contact_discord_label: 'Discord',
     contact_email_label:   'Email',
-    contact_manager_label: 'Менеджер',
+    contact_sponsor_label: 'Спонсорство',
 
     footer_sub:         'Профессиональная киберспортивная организация',
 
@@ -106,7 +106,7 @@ const translations = {
     contact_title:      'CONTACT',
     contact_discord_label: 'Discord',
     contact_email_label:   'Email',
-    contact_manager_label: 'Manager',
+    contact_sponsor_label: 'Sponsorship',
 
     footer_sub:         'Professional Esports Organization',
 
@@ -163,7 +163,7 @@ const translations = {
     contact_title:      'KONTAKT',
     contact_discord_label: 'Discord',
     contact_email_label:   'E-post',
-    contact_manager_label: 'Mänedžer',
+    contact_sponsor_label: 'Sponsorlus',
 
     footer_sub:         'Professionaalne espordi organisatsioon',
 
@@ -180,133 +180,133 @@ const translations = {
 };
 
 /* ============================================================
-   2. PLAYERS DATA (EXPANDED WITH COACH & SUB)
+   2. PLAYERS DATA
    ============================================================ */
 const players = [
   {
-    nickname:    'PHANTOM',
+    nickname:    'YG0Nagato',
     role:        'igl',
     country:     'Estonia',
     countryFlag: '🇪🇪',
     age:         22,
     desc:        { 
-      ru: 'Капитан команды. Мастер тактики и принятия решений под давлением. Обладает уникальным видением игры и способностью адаптироваться к любому противнику.',
-      en: 'Team captain. Master of tactics and decision-making under pressure. Possesses unique game vision and adaptability against any opponent.',
-      et: 'Meeskonna kapten. Taktika ja otsustamise meister surve all. Omab ainulaadset mänguvaadet ja võimet kohaneda iga vastasega.' 
+      ru: 'Капитан команды. Мастер тактики и принятия решений под давлением. Обладает уникальным видением игры.',
+      en: 'Team captain. Master of tactics and decision-making under pressure. Possesses unique game vision.',
+      et: 'Meeskonna kapten. Taktika ja otsustamise meister surve all. Omab ainulaadset mänguvaadet.' 
     },
-    avatar:      null,
+    avatar:      'images/avatar_yg0nagato.png',
     fullBio: {
-      ru: 'PHANTOM — лидер HRSHO, известный своей аналитической способностью и хладнокровием в критические моменты. За три года профессиональной карьеры завоевал множество трофеев и признание в киберспортивном сообществе.',
-      en: 'PHANTOM is the leader of HRSHO, known for his analytical abilities and composure in critical moments. Over three years of professional career, he has won numerous trophies and recognition in the esports community.',
-      et: 'PHANTOM on HRSHO liider, kuulus oma analüütiliste võimete ja külmaverelisuse poolest kriitilistes hetkedel. Kolme aasta jooksul professionaalsel karjääril on ta võitnud arvukaid trofeeasi ja tunnustust espordi kogukonnast.'
+      ru: 'YG0Nagato — лидер HRSHO, известный своей аналитической способностью и хладнокровием в критические моменты. Настоящий стратег на поле боя.',
+      en: 'YG0Nagato is the leader of HRSHO, known for his analytical abilities and composure in critical moments. A true strategist on the battlefield.',
+      et: 'YG0Nagato on HRSHO liider, kuulus oma analüütiliste võimete ja külmaverelisuse poolest kriitilistes hetkedel.'
     }
   },
   {
-    nickname:    'VIPER',
+    nickname:    'ZympleOo',
     role:        'awp',
     country:     'Russia',
     countryFlag: '🇷🇺',
     age:         21,
     desc:        { 
-      ru: 'Снайпер с исключительной точностью. Лучший AWP-игрок команды. Его выстрелы — это искусство, каждый раунд он показывает класс.',
-      en: 'Sniper with exceptional accuracy. The team\'s premier AWP player. His shots are art, every round he demonstrates class.',
-      et: 'Snaiper erandliku täpsusega. Meeskonna parim AWP mängija. Tema laskud on kunst, iga vooru ta näitab klassi.' 
+      ru: 'Снайпер с исключительной точностью. Лучший AWP-игрок команды. Его выстрелы — это искусство.',
+      en: 'Sniper with exceptional accuracy. The team\'s premier AWP player. His shots are art.',
+      et: 'Snaiper erandliku täpsusega. Meeskonna parim AWP mängija. Tema laskud on kunst.' 
     },
-    avatar:      null,
+    avatar:      'images/avatar_zympleoo.png',
     fullBio: {
-      ru: 'VIPER — элита AWP-игроков региона. Его способность контролировать карту с помощью снайперской винтовки не имеет аналогов. Постоянно входит в топ лучших игроков по убийствам.',
-      en: 'VIPER is the elite of AWP players in the region. His ability to control the map with a sniper rifle is unparalleled. Consistently ranks among the top players by kills.',
-      et: 'VIPER on regiooni AWP-mängijate eelit. Tema võime kaardi kontrollimiseks snaiperrelva abil on võrratu. Järjekindlalt paremate mängijate hulgas tappude arvu järgi.'
+      ru: 'ZympleOo — элита AWP-игроков. Его способность контролировать карту с помощью снайперской винтовки не имеет аналогов.',
+      en: 'ZympleOo is the elite of AWP players. His ability to control the map with a sniper rifle is unparalleled.',
+      et: 'ZympleOo on regiooni AWP-mängijate eelit. Tema võime kaardi kontrollimiseks snaiperrelva abil on võrratu.'
     }
   },
   {
-    nickname:    'STORM',
+    nickname:    'piuipp',
     role:        'entry',
     country:     'Latvia',
     countryFlag: '🇱🇻',
     age:         20,
     desc:        { 
-      ru: 'Агрессивный вход на позиции. Создаёт пространство для команды. Его смелые ходы часто становятся переломными в раундах.',
-      en: 'Aggressive entry player. Creates space and opportunities for the team. His bold moves often become turning points in rounds.',
-      et: 'Agressiivne entry mängija. Loob ruumi ja võimalusi meeskonnale. Tema julgeid käike muutuvad sageli vooru pöördepunktideks.' 
+      ru: 'Агрессивный вход на позиции. Создаёт пространство для команды. Его смелые ходы часто становятся переломными.',
+      en: 'Aggressive entry player. Creates space and opportunities for the team. His bold moves are game-changers.',
+      et: 'Agressiivne entry mängija. Loob ruumi ja võimalusi meeskonnale.' 
     },
-    avatar:      null,
+    avatar:      'images/avatar_piuipp.png',
     fullBio: {
-      ru: 'STORM — молодой талант, который быстро зарекомендовал себя как один из лучших entry-фрагеров в регионе. Его энергия и агрессия заражают всю команду.',
-      en: 'STORM is a young talent who quickly established himself as one of the best entry fraggers in the region. His energy and aggression inspire the entire team.',
-      et: 'STORM on noor talent, kes kiiresti tõestas end ühe parimana entry-frageri rollis regioonis. Tema energia ja agressiivsus nakatavad kogu meeskonda.'
+      ru: 'piuipp — молодой талант, который быстро зарекомендовал себя как один из лучших entry-фрагеров. Его энергия заражает всю команду.',
+      en: 'piuipp is a young talent who quickly established himself as one of the best entry fraggers. His energy inspires the entire team.',
+      et: 'piuipp on noor talent, kes kiiresti tõestas end ühe parimana entry-frageri rollis.'
     }
   },
   {
-    nickname:    'GHOST',
+    nickname:    'OGdante',
     role:        'support',
     country:     'Estonia',
     countryFlag: '🇪🇪',
     age:         23,
     desc:        { 
-      ru: 'Незаменимый саппорт. Обеспечивает команду гранатами и информацией. Его игровое понимание позволяет команде играть как один организм.',
-      en: 'Indispensable support. Provides the team with utility and information. His game understanding allows the team to play as one organism.',
-      et: 'Asendamatu support. Varustab meeskonda utiliidi ja infoga. Tema mängumõistmine võimaldab meeskonnal mängida kui üks organism.' 
+      ru: 'Незаменимый саппорт. Обеспечивает команду гранатами и информацией. Его понимание игры на высшем уровне.',
+      en: 'Indispensable support. Provides the team with utility and information. High-level game understanding.',
+      et: 'Asendamatu support. Varustab meeskonda utiliidi ja infoga.' 
     },
-    avatar:      null,
+    avatar:      'images/avatar_ogdante.png',
     fullBio: {
-      ru: 'GHOST — опытный поддерживающий игрок с глубоким пониманием CS2. Его гранаты и позиционирование часто определяют исход раундов. Настоящий профессионал своего дела.',
-      en: 'GHOST is an experienced support player with deep understanding of CS2. His utility usage and positioning often determine round outcomes. A true professional.',
-      et: 'GHOST on kogenud support-mängija sügava CS2 mõistmisega. Tema utiliidi kasutamine ja positsioneerimine määravad sageli vooru tulemuse. Tõeline professionaal.'
+      ru: 'OGdante — опытный поддерживающий игрок с глубоким пониманием CS2. Его гранаты часто определяют исход раундов.',
+      en: 'OGdante is an experienced support player with deep understanding of CS2. His utility usage often determines round outcomes.',
+      et: 'OGdante on kogenud support-mängija sügava CS2 mõistmisega.'
     }
   },
   {
-    nickname:    'BLADE',
+    nickname:    'Deeshka2',
     role:        'rifler',
     country:     'Lithuania',
     countryFlag: '🇱🇹',
     age:         21,
     desc:        { 
-      ru: 'Универсальный рифлер. Высокий рейтинг и стабильная игра в любой ситуации. Можно положиться на него в любой момент.',
-      en: 'Versatile rifler. High rating and consistent performance in any situation. You can rely on him at any moment.',
-      et: 'Mitmekülgne rifler. Kõrge reiting ja stabiilne mäng igas olukorras. Saad temale loota igal ajal.' 
+      ru: 'Универсальный рифлер. Высокий рейтинг и стабильная игра в любой ситуации. Надежная опора команды.',
+      en: 'Versatile rifler. High rating and consistent performance in any situation. The team\'s backbone.',
+      et: 'Mitmekülgne rifler. Kõrge reiting ja stabiilne mäng igas olukorras.' 
     },
-    avatar:      null,
+    avatar:      'images/avatar_deeshka2.png',
     fullBio: {
-      ru: 'BLADE — универсальный боец, который может играть на любой позиции и адаптироваться к любому стилю команды. Его консистентность делает его ценным членом состава.',
-      en: 'BLADE is a versatile fighter who can play any position and adapt to any team style. His consistency makes him a valuable member of the roster.',
-      et: 'BLADE on mitmekülgne võitleja, kes saab mängida iga positsiooni ja kohaneda iga meeskonna stiilile. Tema järjepidevus teeb temast väärtuslikku meeskonna liiget.'
+      ru: 'Deeshka2 — универсальный боец, который может играть на любой позиции и адаптироваться к любому стилю.',
+      en: 'Deeshka2 is a versatile fighter who can play any position and adapt to any team style.',
+      et: 'Deeshka2 on mitmekülgne võitleja, kes saab mängida iga positsiooni.'
     }
   },
   {
-    nickname:    'NEXUS',
+    nickname:    'Sancho_ON',
     role:        'sub',
     country:     'Poland',
     countryFlag: '🇵🇱',
     age:         19,
     desc:        { 
-      ru: 'Перспективный заменщик. Молодой талант с огромным потенциалом. Готов в любой момент заменить основной состав.',
-      en: 'Promising substitute. Young talent with huge potential. Ready to replace the main roster at any moment.',
-      et: 'Lubav asendaja. Noor talent tohutute võimalustega. Valmis igal ajal asendama põhikoosseisu.' 
+      ru: 'Перспективный заменщик. Молодой талант с огромным потенциалом. Готов усилить команду в любой момент.',
+      en: 'Promising substitute. Young talent with huge potential. Ready to strengthen the team at any moment.',
+      et: 'Lubav asendaja. Noor talent tohutute võimalustega.' 
     },
-    avatar:      null,
+    avatar:      'images/avatar_sancho_on.png',
     fullBio: {
-      ru: 'NEXUS — молодой игрок, который активно развивается и готовится к профессиональной карьере. Его потенциал огромен, и команда верит в его будущее. Постоянно тренируется и улучшает свои навыки.',
-      en: 'NEXUS is a young player who is actively developing and preparing for a professional career. His potential is huge, and the team believes in his future. Constantly trains and improves his skills.',
-      et: 'NEXUS on noor mängija, kes aktiivselt areneb ja valmistub professionaalse karjääri jaoks. Tema potentsiaal on tohutu ja meeskond usub tema tulevikku. Pidevalt treenib ja parandab oma oskusi.'
+      ru: 'Sancho_ON — молодой игрок, который активно развивается. Его потенциал огромен, и команда верит в его будущее.',
+      en: 'Sancho_ON is a young player who is actively developing. His potential is huge, and the team believes in his future.',
+      et: 'Sancho_ON on noor mängija, kes areneb aktiivselt.'
     }
   },
   {
-    nickname:    'COACH ALEX',
+    nickname:    'Pito Poncho',
     role:        'coach',
     country:     'Sweden',
     countryFlag: '🇸🇪',
     age:         28,
     desc:        { 
-      ru: 'Главный тренер команды. Стратег с 10-летним опытом в киберспорте. Его тактики и подготовка определяют успех HRSHO.',
-      en: 'Head coach of the team. Strategist with 10 years of esports experience. His tactics and preparation determine HRSHO\'s success.',
-      et: 'Meeskonna peatreener. Strateegia 10 aasta espordi kogemusega. Tema taktika ja ettevalmistus määravad HRSHO edu.' 
+      ru: 'Главный стратег. Огромный опыт за плечами. Разрабатывает победные тактики и следит за дисциплиной.',
+      en: 'Master strategist. Vast experience behind him. Develops winning tactics and maintains discipline.',
+      et: 'Peamine strateeg. Suur kogemus selja taga. Arendab võidustrateegiaid.' 
     },
-    avatar:      null,
+    avatar:      'images/avatar_pitoponcho.png',
     fullBio: {
-      ru: 'COACH ALEX — опытный тренер, который привел множество команд к вершинам киберспорта. Его аналитические способности и понимание игры помогают HRSHO постоянно совершенствоваться. Работает над тактикой, физической подготовкой и психологической устойчивостью игроков.',
-      en: 'COACH ALEX is an experienced coach who has led many teams to the heights of esports. His analytical abilities and game understanding help HRSHO constantly improve. Works on tactics, physical fitness and psychological resilience of players.',
-      et: 'COACH ALEX on kogenud treener, kes on viinud paljusid meeskondi espordi tippu. Tema analüütilised võimed ja mängumõistmine aitavad HRSHO pidevalt parandada. Töötab taktika, füüsilise vormi ja mängijate psühholoogilise vastupidavuse kallal.'
+      ru: 'Pito Poncho — мозг команды. Его тактические наработки и умение анализировать противника принесли HRSHO множество побед.',
+      en: 'Pito Poncho is the brain of the team. His tactical developments and ability to analyze opponents have brought HRSHO many victories.',
+      et: 'Pito Poncho on meeskonna aju. Tema taktikalised arendused on toonud HRSHO-le palju võite.'
     }
   }
 ];
@@ -316,34 +316,24 @@ const players = [
    ============================================================ */
 const achievements = [
   {
-    medal:      '🥇',
-    place:      { ru: '1 место', en: '1st Place', et: '1. koht' },
-    tournament: 'Baltic Cup 2025',
-    year:       '2025'
+    title: { ru: 'Baltic Cup 2024', en: 'Baltic Cup 2024', et: 'Balti Karikas 2024' },
+    place: '1st',
+    icon:  '🏆'
   },
   {
-    medal:      '🥈',
-    place:      { ru: '2 место', en: '2nd Place', et: '2. koht' },
-    tournament: 'CS2 Open League',
-    year:       '2025'
+    title: { ru: 'CS2 Open League', en: 'CS2 Open League', et: 'CS2 Avatud Liiga' },
+    place: '2nd',
+    icon:  '🥈'
   },
   {
-    medal:      '🥉',
-    place:      { ru: '3 место', en: '3rd Place', et: '3. koht' },
-    tournament: 'Winter Esports Cup',
-    year:       '2024'
+    title: { ru: 'Winter Esports Cup', en: 'Winter Esports Cup', et: 'Talvine Espordi Karikas' },
+    place: '3rd',
+    icon:  '🥉'
   },
   {
-    medal:      '🏆',
-    place:      { ru: 'Финалист', en: 'Finalist', et: 'Finalist' },
-    tournament: 'Eastern European League',
-    year:       '2024'
-  },
-  {
-    medal:      '⚡',
-    place:      { ru: 'MVP', en: 'MVP Award', et: 'MVP auhind' },
-    tournament: 'Baltic Clash 2025',
-    year:       '2025'
+    title: { ru: 'EE League Season 5', en: 'EE League Season 5', et: 'EE Liiga 5. hooaeg' },
+    place: 'Winner',
+    icon:  '💎'
   }
 ];
 
@@ -351,485 +341,292 @@ const achievements = [
    4. SOCIAL LINKS
    ============================================================ */
 const socialLinks = [
-  {
-    name:  'Discord',
-    icon:  'fab fa-discord',
-    url:   'https://discord.gg/hrsho',
-    color: '#5865F2'
-  },
-  {
-    name:  'Steam',
-    icon:  'fab fa-steam',
-    url:   'https://steamcommunity.com/groups/hrsho',
-    color: '#1b2838'
-  },
-  {
-    name:  'Twitch',
-    icon:  'fab fa-twitch',
-    url:   'https://twitch.tv/hrsho',
-    color: '#9146FF'
-  },
-  {
-    name:  'YouTube',
-    icon:  'fab fa-youtube',
-    url:   'https://youtube.com/@hrsho',
-    color: '#FF0000'
-  },
-  {
-    name:  'TikTok',
-    icon:  'fab fa-tiktok',
-    url:   'https://tiktok.com/@hrsho',
-    color: '#010101'
-  },
-  {
-    name:  'Instagram',
-    icon:  'fab fa-instagram',
-    url:   'https://instagram.com/hrsho',
-    color: '#E1306C'
-  },
-  {
-    name:  'X / Twitter',
-    icon:  'fab fa-x-twitter',
-    url:   'https://x.com/hrsho',
-    color: '#1DA1F2'
-  }
+  { name: 'Discord', icon: 'fab fa-discord', url: 'https://discord.gg/MpYHgTeSxY' },
+  { name: 'Steam', icon: 'fab fa-steam', url: 'https://steamcommunity.com/groups/hrsho' },
+  { name: 'Twitch', icon: 'fab fa-twitch', url: 'https://twitch.tv/hrshoclan' },
+  { name: 'YouTube', icon: 'fab fa-youtube', url: 'https://youtube.com/@hrshoclan' },
+  { name: 'TikTok', icon: 'fab fa-tiktok', url: 'https://tiktok.com/@hrshoclan' },
+  { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://instagram.com/hrshoclan' },
+  { name: 'Twitter', icon: 'fab fa-x-twitter', url: 'https://x.com/hrshoclan' }
 ];
 
 /* ============================================================
    5. CONTACT INFO
    ============================================================ */
 const contactInfo = {
-  discord:  'discord.gg/hrsho',
-  email:    'manager@hrsho.gg',
-  manager:  'contact@hrshoclan.com'
+  discord: 'MpYHgTeSxY',
+  email:   'hrsho@tuta.io',
+  sponsor: 'We are looking for a sponsor!'
 };
 
 /* ============================================================
-   6. LANGUAGE SWITCHER
+   CORE LOGIC — DOM & RENDER
    ============================================================ */
-let currentLang = 'ru';
+document.addEventListener('DOMContentLoaded', () => {
+  const rosterGrid = document.getElementById('roster-grid');
+  const achGrid = document.getElementById('achievements-grid');
+  const socialGrid = document.getElementById('social-grid');
+  const langBtns = document.querySelectorAll('.lang-btn');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  
+  let currentLang = 'ru';
 
-function applyTranslations(lang) {
-  currentLang = lang;
-  const t = translations[lang];
-  if (!t) return;
-
-  // Update all elements with data-key
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const key = el.getAttribute('data-key');
-    if (t[key] !== undefined) el.textContent = t[key];
-  });
-
-  // Update lang buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-  });
-
-  // Re-render dynamic content with new language
-  renderRoster(lang);
-  renderAchievements(lang);
-
-  // Update html lang attribute
-  document.documentElement.lang = lang;
-}
-
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const lang = btn.getAttribute('data-lang');
-    applyTranslations(lang);
-  });
-});
-
-/* ============================================================
-   7. PLAYER MODAL SYSTEM
-   ============================================================ */
-function openPlayerModal(playerIndex) {
-  const player = players[playerIndex];
-  if (!player) return;
-
-  const t = translations[currentLang];
-  const roleLabel = t[getRoleKey(player.role)] || player.role.toUpperCase();
-  const desc = typeof player.desc === 'object' ? (player.desc[currentLang] || player.desc.en) : player.desc;
-  const fullBio = typeof player.fullBio === 'object' ? (player.fullBio[currentLang] || player.fullBio.en) : player.fullBio;
-
-  const modal = document.createElement('div');
-  modal.className = 'player-modal';
-  modal.innerHTML = `
-    <div class="modal-overlay"></div>
-    <div class="modal-content">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <div class="modal-header">
-        <div class="modal-avatar-wrap">
-          ${player.avatar 
-            ? `<img src="${player.avatar}" alt="${player.nickname}" class="modal-avatar" />` 
-            : `<div class="modal-avatar-placeholder"><i class="fas fa-user"></i></div>`}
-        </div>
-        <div class="modal-header-info">
-          <h2 class="modal-nickname">${player.nickname}</h2>
-          <div class="modal-role">${roleLabel}</div>
-          <div class="modal-meta">
-            <span>${player.countryFlag} ${player.country}</span>
-            <span>Age: ${player.age}</span>
-          </div>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="modal-section">
-          <h3>О игроке</h3>
-          <p>${desc}</p>
-        </div>
-        <div class="modal-section">
-          <h3>Полная биография</h3>
-          <p>${fullBio}</p>
-        </div>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-  modal.classList.add('active');
-
-  // Close on overlay click
-  modal.querySelector('.modal-overlay').addEventListener('click', () => closePlayerModal(modal));
-  modal.querySelector('.modal-close').addEventListener('click', () => closePlayerModal(modal));
-
-  // Close on Escape
-  const handleEscape = (e) => {
-    if (e.key === 'Escape') {
-      closePlayerModal(modal);
-      document.removeEventListener('keydown', handleEscape);
-    }
-  };
-  document.addEventListener('keydown', handleEscape);
-}
-
-function closePlayerModal(modal) {
-  modal.classList.remove('active');
-  setTimeout(() => modal.remove(), 300);
-}
-
-/* ============================================================
-   8. RENDER ROSTER
-   ============================================================ */
-function getRoleKey(role) {
-  const map = { igl: 'role_igl', awp: 'role_awp', rifler: 'role_rifler', support: 'role_support', entry: 'role_entry', coach: 'role_coach', sub: 'role_sub' };
-  return map[role] || role;
-}
-
-function renderRoster(lang) {
-  const grid = document.getElementById('roster-grid');
-  if (!grid) return;
-  const t = translations[lang];
-
-  grid.innerHTML = players.map((p, i) => {
-    const roleLabel = t[getRoleKey(p.role)] || p.role.toUpperCase();
-    const desc = typeof p.desc === 'object' ? (p.desc[lang] || p.desc.en) : p.desc;
-    const avatarHtml = p.avatar
-      ? `<img src="${p.avatar}" alt="${p.nickname}" class="player-avatar" loading="lazy" />`
-      : `<div class="player-avatar-placeholder"><i class="fas fa-user"></i></div>`;
-
-    return `
-      <div class="player-card reveal clickable" style="transition-delay: ${i * 0.1}s" role="button" tabindex="0" data-player-index="${i}">
+  // --- Initialize Roster ---
+  function renderRoster() {
+    rosterGrid.innerHTML = '';
+    players.forEach((p, index) => {
+      const card = document.createElement('div');
+      card.className = 'player-card reveal';
+      card.innerHTML = `
         <div class="player-avatar-wrap">
-          ${avatarHtml}
-          <div class="player-role-badge">${roleLabel}</div>
+          <img src="${p.avatar || 'https://via.placeholder.com/300x400?text=HRSHO'}" alt="${p.nickname}" class="player-avatar">
+          <div class="player-role-badge">${translations[currentLang]['role_' + p.role]}</div>
         </div>
         <div class="player-info">
           <h3 class="player-nickname">${p.nickname}</h3>
           <div class="player-meta">
-            <span class="player-country"><i class="fas fa-globe"></i> ${p.countryFlag} ${p.country}</span>
-            <span class="player-age"><i class="fas fa-calendar"></i> ${p.age}</span>
+            <span class="player-flag">${p.countryFlag}</span>
+            <span class="player-age">${p.age} y.o.</span>
           </div>
-          <p class="player-desc">${desc}</p>
+          <p class="player-desc">${p.desc[currentLang]}</p>
+        </div>
+      `;
+      card.addEventListener('click', () => openModal(index));
+      rosterGrid.appendChild(card);
+    });
+  }
+
+  // --- Initialize Achievements ---
+  function renderAchievements() {
+    achGrid.innerHTML = '';
+    achievements.forEach(a => {
+      const card = document.createElement('div');
+      card.className = 'ach-card glass-card reveal';
+      card.innerHTML = `
+        <div class="ach-icon">${a.icon}</div>
+        <h3 class="ach-place">${a.place}</h3>
+        <p class="ach-title">${a.title[currentLang]}</p>
+      `;
+      achGrid.appendChild(card);
+    });
+  }
+
+  // --- Initialize Socials ---
+  function renderSocials() {
+    socialGrid.innerHTML = '';
+    socialLinks.forEach(s => {
+      const link = document.createElement('a');
+      link.href = s.url;
+      link.target = '_blank';
+      link.className = `social-btn social-${s.name.toLowerCase()} reveal`;
+      link.innerHTML = `<i class="${s.icon}"></i> <span>${s.name}</span>`;
+      socialGrid.appendChild(link);
+    });
+  }
+
+  // --- Update Static Texts ---
+  function updateTexts() {
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (translations[currentLang][key]) {
+        el.textContent = translations[currentLang][key];
+      }
+    });
+
+    // Update Contact Section specifically
+    document.getElementById('contact-discord').textContent = contactInfo.discord;
+    document.getElementById('contact-email').textContent = contactInfo.email;
+    document.getElementById('contact-manager').textContent = contactInfo.sponsor;
+    
+    // Update "Founded" year in hero stats
+    const foundedStat = document.querySelector('.hero-stat:last-child .stat-num');
+    if (foundedStat) foundedStat.textContent = '2021';
+  }
+
+  // --- Language Switcher ---
+  langBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      langBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentLang = btn.getAttribute('data-lang');
+      
+      renderRoster();
+      renderAchievements();
+      updateTexts();
+    });
+  });
+
+  // --- Mobile Menu ---
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // --- Modal Logic ---
+  const modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.id = 'player-modal';
+  modal.innerHTML = `
+    <div class="modal-content glass-card">
+      <button class="modal-close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img src="" alt="" id="modal-img">
+        </div>
+        <div class="modal-info">
+          <div class="modal-header">
+            <h2 id="modal-nickname"></h2>
+            <span id="modal-role-badge" class="player-role-badge"></span>
+          </div>
+          <div class="modal-meta">
+            <span id="modal-flag"></span>
+            <span id="modal-country"></span>
+            <span class="modal-sep">|</span>
+            <span id="modal-age"></span>
+          </div>
+          <div class="modal-bio">
+            <p id="modal-bio-text"></p>
+          </div>
         </div>
       </div>
-    `;
-  }).join('');
+    </div>
+  `;
+  document.body.appendChild(modal);
 
-  // Add click listeners to player cards
-  document.querySelectorAll('.player-card.clickable').forEach(card => {
-    card.addEventListener('click', function() {
-      const index = this.getAttribute('data-player-index');
-      openPlayerModal(parseInt(index));
-    });
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const index = this.getAttribute('data-player-index');
-        openPlayerModal(parseInt(index));
+  const modalImg = document.getElementById('modal-img');
+  const modalNickname = document.getElementById('modal-nickname');
+  const modalRole = document.getElementById('modal-role-badge');
+  const modalFlag = document.getElementById('modal-flag');
+  const modalCountry = document.getElementById('modal-country');
+  const modalAge = document.getElementById('modal-age');
+  const modalBio = document.getElementById('modal-bio-text');
+  const closeBtn = modal.querySelector('.modal-close');
+
+  function openModal(index) {
+    const p = players[index];
+    modalImg.src = p.avatar || 'https://via.placeholder.com/300x400?text=HRSHO';
+    modalNickname.textContent = p.nickname;
+    modalRole.textContent = translations[currentLang]['role_' + p.role];
+    modalFlag.textContent = p.countryFlag;
+    modalCountry.textContent = p.country;
+    modalAge.textContent = `${p.age} years old`;
+    modalBio.textContent = p.fullBio[currentLang];
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // --- Smooth Scroll ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: 'smooth'
+        });
       }
     });
   });
 
-  // Re-observe new elements
-  observeReveal();
-}
+  // --- Reveal Animations ---
+  const revealElements = () => {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const elementVisible = 100;
+      if (elementTop < windowHeight - elementVisible) {
+        el.classList.add('active');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealElements);
 
-/* ============================================================
-   9. RENDER ACHIEVEMENTS
-   ============================================================ */
-function renderAchievements(lang) {
-  const grid = document.getElementById('achievements-grid');
-  if (!grid) return;
-
-  grid.innerHTML = achievements.map((a, i) => {
-    const place = typeof a.place === 'object' ? (a.place[lang] || a.place.en) : a.place;
-    return `
-      <div class="achievement-card reveal" style="transition-delay: ${i * 0.1}s">
-        <div class="ach-corner"></div>
-        <span class="ach-medal">${a.medal}</span>
-        <p class="ach-place">${place}</p>
-        <h3 class="ach-tournament">${a.tournament}</h3>
-        <p class="ach-year">${a.year}</p>
-      </div>
-    `;
-  }).join('');
-
-  observeReveal();
-}
-
-/* ============================================================
-   10. RENDER SOCIAL LINKS
-   ============================================================ */
-function renderSocial() {
-  const grid = document.getElementById('social-grid');
-  if (!grid) return;
-
-  grid.innerHTML = socialLinks.map(link => `
-    <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-btn" style="--social-color: ${link.color}">
-      <i class="${link.icon}"></i>
-      <span>${link.name}</span>
-    </a>
-  `).join('');
-}
-
-/* ============================================================
-   11. RENDER CONTACT
-   ============================================================ */
-function renderContact() {
-  // Contact is static in HTML, no need to render
-}
-
-/* ============================================================
-   12. SCROLL ANIMATIONS (REVEAL ON SCROLL)
-   ============================================================ */
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('revealed');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-function observeReveal() {
-  document.querySelectorAll('.reveal:not(.revealed)').forEach(el => observer.observe(el));
-  document.querySelectorAll('[class*="reveal-"]:not(.revealed)').forEach(el => observer.observe(el));
-}
-
-/* ============================================================
-   13. NAVBAR SCROLL EFFECT & MOBILE MENU
-   ============================================================ */
-const navbar = document.querySelector('.navbar');
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-}, { passive: true });
-
-// Hamburger menu toggle
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-}
-
-// Close menu when link is clicked
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
-  });
-});
-
-/* ============================================================
-   14. PARTICLE ANIMATION
-   ============================================================ */
-(() => {
+  // --- Canvas Particles ---
   const canvas = document.getElementById('particles-canvas');
-  if (!canvas) return;
   const ctx = canvas.getContext('2d');
+  let particles = [];
 
-  let W, H, particles = [], lines = [];
-  const PARTICLE_COUNT = 80;
-  const LINE_COUNT = 12;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
 
   class Particle {
-    constructor() { this.reset(true); }
-    reset(init) {
-      this.x  = Math.random() * W;
-      this.y  = init ? Math.random() * H : H + 10;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = -(Math.random() * 0.5 + 0.2);
-      this.size   = Math.random() * 2 + 0.5;
-      this.alpha  = Math.random() * 0.6 + 0.1;
-      this.life   = 0;
-      this.maxLife = Math.random() * 300 + 200;
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = Math.random() * 0.5 - 0.25;
+      this.speedY = Math.random() * 0.5 - 0.25;
+      this.alpha = Math.random() * 0.5 + 0.1;
     }
     update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      this.life++;
-      if (this.life > this.maxLife || this.y < -10) this.reset(false);
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+        this.reset();
+      }
     }
     draw() {
-      const progress = this.life / this.maxLife;
-      const a = this.alpha * (progress < 0.1 ? progress / 0.1 : progress > 0.9 ? (1 - progress) / 0.1 : 1);
+      ctx.fillStyle = `rgba(255, 102, 0, ${this.alpha})`;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 106, 0, ${a})`;
       ctx.fill();
     }
   }
 
-  class GlowLine {
-    constructor() { this.reset(); }
-    reset() {
-      this.x     = Math.random() * W;
-      this.y     = Math.random() * H;
-      this.angle = Math.random() * Math.PI * 2;
-      this.speed = Math.random() * 0.5 + 0.2;
-      this.len   = Math.random() * 120 + 60;
-      this.alpha = Math.random() * 0.15 + 0.05;
-      this.life  = 0;
-      this.maxLife = Math.random() * 200 + 100;
-    }
-    update() {
-      this.x += Math.cos(this.angle) * this.speed;
-      this.y += Math.sin(this.angle) * this.speed;
-      this.life++;
-      if (this.life > this.maxLife || this.x < -200 || this.x > W + 200 || this.y < -200 || this.y > H + 200) this.reset();
-    }
-    draw() {
-      const progress = this.life / this.maxLife;
-      const a = this.alpha * (progress < 0.1 ? progress / 0.1 : progress > 0.9 ? (1 - progress) / 0.1 : 1);
-      const ex = this.x + Math.cos(this.angle) * this.len;
-      const ey = this.y + Math.sin(this.angle) * this.len;
-      const grad = ctx.createLinearGradient(this.x, this.y, ex, ey);
-      grad.addColorStop(0, `rgba(255,106,0,0)`);
-      grad.addColorStop(0.5, `rgba(255,106,0,${a})`);
-      grad.addColorStop(1, `rgba(255,106,0,0)`);
-      ctx.beginPath();
-      ctx.moveTo(this.x, this.y);
-      ctx.lineTo(ex, ey);
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = 1;
-      ctx.stroke();
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push(new Particle());
     }
   }
-
-  function init() {
-    resize();
-    particles = Array.from({ length: PARTICLE_COUNT }, () => new Particle());
-    lines     = Array.from({ length: LINE_COUNT },     () => new GlowLine());
-  }
+  initParticles();
 
   function animate() {
-    ctx.clearRect(0, 0, W, H);
-    lines.forEach(l => { l.update(); l.draw(); });
-    particles.forEach(p => { p.update(); p.draw(); });
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
     requestAnimationFrame(animate);
   }
-
-  window.addEventListener('resize', () => { resize(); }, { passive: true });
-  init();
   animate();
-})();
 
-/* ============================================================
-   15. PARALLAX HERO
-   ============================================================ */
-window.addEventListener('scroll', () => {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-  const scrolled = window.scrollY;
-  const heroHeight = hero.offsetHeight;
-  if (scrolled < heroHeight) {
-    const parallaxFactor = scrolled * 0.4;
-    const heroContent = hero.querySelector('.hero-content');
-    if (heroContent) {
-      heroContent.style.transform = `translateY(${parallaxFactor}px)`;
-      heroContent.style.opacity = 1 - (scrolled / heroHeight) * 1.5;
-    }
-  }
-}, { passive: true });
-
-/* ============================================================
-   16. SMOOTH SCROLL FOR ANCHOR LINKS
-   ============================================================ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const navHeight = 72; // var(--nav-height)
-      const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  });
-});
-
-/* ============================================================
-   17. ACTIVE NAV LINK ON SCROLL
-   ============================================================ */
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 100;
-  sections.forEach(section => {
-    const top    = section.offsetTop;
-    const bottom = top + section.offsetHeight;
-    const id     = section.getAttribute('id');
-    const link   = document.querySelector(`.nav-link[href="#${id}"]`);
-    if (link) {
-      link.classList.toggle('active-link', scrollPos >= top && scrollPos < bottom);
-    }
-  });
-}, { passive: true });
-
-/* ============================================================
-   18. INIT
-   ============================================================ */
-document.addEventListener('DOMContentLoaded', () => {
-  renderRoster(currentLang);
-  renderAchievements(currentLang);
-  renderSocial();
-  renderContact();
-  applyTranslations(currentLang);
-  observeReveal();
-
-  // Add reveal classes to static elements
-  document.querySelectorAll('.about-feature, .contact-card').forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.transitionDelay = `${i * 0.12}s`;
-  });
-  document.querySelector('.about-text-block')?.classList.add('reveal-left');
-  document.querySelector('.about-visual')?.classList.add('reveal-right');
-
-  observeReveal();
+  // Initial render
+  renderRoster();
+  renderAchievements();
+  renderSocials();
+  updateTexts();
+  revealElements();
 });

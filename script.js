@@ -30,7 +30,7 @@ const translations = {
     about_text:         'HRSHO — киберспортивная команда по Counter-Strike 2, объединяющая игроков с высоким уровнем игры, дисциплиной и стремлением к победе. Мы не просто играем — мы доминируем на каждой карте, в каждом раунде.',
 
     feat1_title:        'Точность',
-    feat1_desc:         'Каждый выстрел — результат многочасовых тренировок',
+    feat1_desc:         'Каждый выстрел — результат многочасовых тренировров',
     feat2_title:        'Стратегия',
     feat2_desc:         'Тактическое превосходство на каждой карте',
     feat3_title:        'Командная работа',
@@ -194,7 +194,7 @@ const players = [
       en: 'Team captain. Master of tactics and decision-making under pressure. Possesses unique game vision.',
       et: 'Meeskonna kapten. Taktika ja otsustamise meister surve all. Omab ainulaadset mänguvaadet.' 
     },
-    avatar:      'images/avatar_yg0nagato.png',
+    avatar:      'avatar_yg0nagato.png',
     fullBio: {
       ru: 'YG0Nagato — лидер HRSHO, известный своей аналитической способностью и хладнокровием в критические моменты. Настоящий стратег на поле боя.',
       en: 'YG0Nagato is the leader of HRSHO, known for his analytical abilities and composure in critical moments. A true strategist on the battlefield.',
@@ -212,7 +212,7 @@ const players = [
       en: 'Sniper with exceptional accuracy. The team\'s premier AWP player. His shots are art.',
       et: 'Snaiper erandliku täpsusega. Meeskonna parim AWP mängija. Tema laskud on kunst.' 
     },
-    avatar:      'images/avatar_zympleoo.png',
+    avatar:      'avatar_zympleoo.png',
     fullBio: {
       ru: 'ZympleOo — элита AWP-игроков. Его способность контролировать карту с помощью снайперской винтовки не имеет аналогов.',
       en: 'ZympleOo is the elite of AWP players. His ability to control the map with a sniper rifle is unparalleled.',
@@ -230,7 +230,7 @@ const players = [
       en: 'Aggressive entry player. Creates space and opportunities for the team. His bold moves are game-changers.',
       et: 'Agressiivne entry mängija. Loob ruumi ja võimalusi meeskonnale.' 
     },
-    avatar:      'images/avatar_piuipp.png',
+    avatar:      'avatar_piuipp.png',
     fullBio: {
       ru: 'piuipp — молодой талант, который быстро зарекомендовал себя как один из лучших entry-фрагеров. Его энергия заражает всю команду.',
       en: 'piuipp is a young talent who quickly established himself as one of the best entry fraggers. His energy inspires the entire team.',
@@ -248,7 +248,7 @@ const players = [
       en: 'Indispensable support. Provides the team with utility and information. High-level game understanding.',
       et: 'Asendamatu support. Varustab meeskonda utiliidi ja infoga.' 
     },
-    avatar:      'images/avatar_ogdante.png',
+    avatar:      'avatar_ogdante.png',
     fullBio: {
       ru: 'OGdante — опытный поддерживающий игрок с глубоким пониманием CS2. Его гранаты часто определяют исход раундов.',
       en: 'OGdante is an experienced support player with deep understanding of CS2. His utility usage often determines round outcomes.',
@@ -266,7 +266,7 @@ const players = [
       en: 'Versatile rifler. High rating and consistent performance in any situation. The team\'s backbone.',
       et: 'Mitmekülgne rifler. Kõrge reiting ja stabiilne mäng igas olukorras.' 
     },
-    avatar:      'images/avatar_deeshka2.png',
+    avatar:      'avatar_deeshka2.png',
     fullBio: {
       ru: 'Deeshka2 — универсальный боец, который может играть на любой позиции и адаптироваться к любому стилю.',
       en: 'Deeshka2 is a versatile fighter who can play any position and adapt to any team style.',
@@ -284,7 +284,7 @@ const players = [
       en: 'Promising substitute. Young talent with huge potential. Ready to strengthen the team at any moment.',
       et: 'Lubav asendaja. Noor talent tohutute võimalustega.' 
     },
-    avatar:      'images/avatar_sancho_on.png',
+    avatar:      'avatar_sancho_on.png',
     fullBio: {
       ru: 'Sancho_ON — молодой игрок, который активно развивается. Его потенциал огромен, и команда верит в его будущее.',
       en: 'Sancho_ON is a young player who is actively developing. His potential is huge, and the team believes in his future.',
@@ -302,7 +302,7 @@ const players = [
       en: 'Master strategist. Vast experience behind him. Develops winning tactics and maintains discipline.',
       et: 'Peamine strateeg. Suur kogemus selja taga. Arendab võidustrateegiaid.' 
     },
-    avatar:      'images/avatar_pitoponcho.png',
+    avatar:      'avatar_pitoponcho.png',
     fullBio: {
       ru: 'Pito Poncho — мозг команды. Его тактические наработки и умение анализировать противника принесли HRSHO множество побед.',
       en: 'Pito Poncho is the brain of the team. His tactical developments and ability to analyze opponents have brought HRSHO many victories.',
@@ -331,7 +331,7 @@ const achievements = [
     icon:  '🥉'
   },
   {
-    title: { ru: 'EE League Season 5', en: 'EE League Season 5', et: 'EE Liiga 5. hooaeg' },
+    title: { ru: 'EE League Season 5', en: 'EE League Season 5', et: 'EE Liiga 5. hooaга' },
     place: 'Winner',
     icon:  '💎'
   }
@@ -374,6 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Initialize Roster ---
   function renderRoster() {
+    if (!rosterGrid) return;
     rosterGrid.innerHTML = '';
     players.forEach((p, index) => {
       const card = document.createElement('div');
@@ -399,6 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Initialize Achievements ---
   function renderAchievements() {
+    if (!achGrid) return;
     achGrid.innerHTML = '';
     achievements.forEach(a => {
       const card = document.createElement('div');
@@ -414,6 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Initialize Socials ---
   function renderSocials() {
+    if (!socialGrid) return;
     socialGrid.innerHTML = '';
     socialLinks.forEach(s => {
       const link = document.createElement('a');
@@ -435,9 +438,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Update Contact Section specifically
-    document.getElementById('contact-discord').textContent = contactInfo.discord;
-    document.getElementById('contact-email').textContent = contactInfo.email;
-    document.getElementById('contact-manager').textContent = contactInfo.sponsor;
+    const contactDiscord = document.getElementById('contact-discord');
+    const contactEmail = document.getElementById('contact-email');
+    const contactManager = document.getElementById('contact-manager');
+    
+    if (contactDiscord) contactDiscord.textContent = contactInfo.discord;
+    if (contactEmail) contactEmail.textContent = contactInfo.email;
+    if (contactManager) contactManager.textContent = contactInfo.sponsor;
     
     // Update "Founded" year in hero stats
     const foundedStat = document.querySelector('.hero-stat:last-child .stat-num');
@@ -458,18 +465,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Mobile Menu ---
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-
-  // Close mobile menu on link click
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
-  });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  }
 
   // --- Modal Logic ---
   const modal = document.createElement('div');
@@ -513,6 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openModal(index) {
     const p = players[index];
+    if (!p) return;
     modalImg.src = p.avatar || 'https://via.placeholder.com/300x400?text=HRSHO';
     modalNickname.textContent = p.nickname;
     modalRole.textContent = translations[currentLang]['role_' + p.role];
@@ -530,7 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'auto';
   }
 
-  closeBtn.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
@@ -568,60 +577,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Canvas Particles ---
   const canvas = document.getElementById('particles-canvas');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let particles = [];
 
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-  class Particle {
-    constructor() {
-      this.reset();
-    }
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 1;
-      this.speedX = Math.random() * 0.5 - 0.25;
-      this.speedY = Math.random() * 0.5 - 0.25;
-      this.alpha = Math.random() * 0.5 + 0.1;
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+    class Particle {
+      constructor() {
         this.reset();
       }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+        this.alpha = Math.random() * 0.5 + 0.1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.fillStyle = `rgba(255, 102, 0, ${this.alpha})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
-    draw() {
-      ctx.fillStyle = `rgba(255, 102, 0, ${this.alpha})`;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
 
-  function initParticles() {
-    particles = [];
-    for (let i = 0; i < 80; i++) {
-      particles.push(new Particle());
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 80; i++) {
+        particles.push(new Particle());
+      }
     }
-  }
-  initParticles();
+    initParticles();
 
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    requestAnimationFrame(animate);
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
   }
-  animate();
 
   // Initial render
   renderRoster();

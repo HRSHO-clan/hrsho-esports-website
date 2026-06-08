@@ -58,6 +58,10 @@ const translations = {
     role_rifler:        'Rifler',
     role_support:       'Support',
     role_entry:         'Entry Fragger',
+    role_coach:         'Тренер',
+    role_sub:           'Заменщик',
+
+    modal_close:        'Закрыть',
   },
 
   en: {
@@ -111,6 +115,10 @@ const translations = {
     role_rifler:        'Rifler',
     role_support:       'Support',
     role_entry:         'Entry Fragger',
+    role_coach:         'Coach',
+    role_sub:           'Substitute',
+
+    modal_close:        'Close',
   },
 
   et: {
@@ -164,11 +172,15 @@ const translations = {
     role_rifler:        'Rifler',
     role_support:       'Support',
     role_entry:         'Entry Fragger',
+    role_coach:         'Treener',
+    role_sub:           'Asendaja',
+
+    modal_close:        'Sulge',
   }
 };
 
 /* ============================================================
-   2. PLAYERS DATA
+   2. PLAYERS DATA (EXPANDED WITH COACH & SUB)
    ============================================================ */
 const players = [
   {
@@ -177,8 +189,17 @@ const players = [
     country:     'Estonia',
     countryFlag: '🇪🇪',
     age:         22,
-    desc:        { ru: 'Капитан команды. Мастер тактики и принятия решений под давлением.', en: 'Team captain. Master of tactics and decision-making under pressure.', et: 'Meeskonna kapten. Taktika ja otsustamise meister surve all.' },
-    avatar:      null
+    desc:        { 
+      ru: 'Капитан команды. Мастер тактики и принятия решений под давлением. Обладает уникальным видением игры и способностью адаптироваться к любому противнику.',
+      en: 'Team captain. Master of tactics and decision-making under pressure. Possesses unique game vision and adaptability against any opponent.',
+      et: 'Meeskonna kapten. Taktika ja otsustamise meister surve all. Omab ainulaadset mänguvaadet ja võimet kohaneda iga vastasega.' 
+    },
+    avatar:      null,
+    fullBio: {
+      ru: 'PHANTOM — лидер HRSHO, известный своей аналитической способностью и хладнокровием в критические моменты. За три года профессиональной карьеры завоевал множество трофеев и признание в киберспортивном сообществе.',
+      en: 'PHANTOM is the leader of HRSHO, known for his analytical abilities and composure in critical moments. Over three years of professional career, he has won numerous trophies and recognition in the esports community.',
+      et: 'PHANTOM on HRSHO liider, kuulus oma analüütiliste võimete ja külmaverelisuse poolest kriitilistes hetkedel. Kolme aasta jooksul professionaalsel karjääril on ta võitnud arvukaid trofeeasi ja tunnustust espordi kogukonnast.'
+    }
   },
   {
     nickname:    'VIPER',
@@ -186,8 +207,17 @@ const players = [
     country:     'Russia',
     countryFlag: '🇷🇺',
     age:         21,
-    desc:        { ru: 'Снайпер с исключительной точностью. Лучший AWP-игрок команды.', en: 'Sniper with exceptional accuracy. The team\'s premier AWP player.', et: 'Snaiper erandliku täpsusega. Meeskonna parim AWP mängija.' },
-    avatar:      null
+    desc:        { 
+      ru: 'Снайпер с исключительной точностью. Лучший AWP-игрок команды. Его выстрелы — это искусство, каждый раунд он показывает класс.',
+      en: 'Sniper with exceptional accuracy. The team\'s premier AWP player. His shots are art, every round he demonstrates class.',
+      et: 'Snaiper erandliku täpsusega. Meeskonna parim AWP mängija. Tema laskud on kunst, iga vooru ta näitab klassi.' 
+    },
+    avatar:      null,
+    fullBio: {
+      ru: 'VIPER — элита AWP-игроков региона. Его способность контролировать карту с помощью снайперской винтовки не имеет аналогов. Постоянно входит в топ лучших игроков по убийствам.',
+      en: 'VIPER is the elite of AWP players in the region. His ability to control the map with a sniper rifle is unparalleled. Consistently ranks among the top players by kills.',
+      et: 'VIPER on regiooni AWP-mängijate eelit. Tema võime kaardi kontrollimiseks snaiperrelva abil on võrratu. Järjekindlalt paremate mängijate hulgas tappude arvu järgi.'
+    }
   },
   {
     nickname:    'STORM',
@@ -195,8 +225,17 @@ const players = [
     country:     'Latvia',
     countryFlag: '🇱🇻',
     age:         20,
-    desc:        { ru: 'Агрессивный вход на позиции. Создаёт пространство для команды.', en: 'Aggressive entry player. Creates space and opportunities for the team.', et: 'Agressiivne entry mängija. Loob ruumi ja võimalusi meeskonnale.' },
-    avatar:      null
+    desc:        { 
+      ru: 'Агрессивный вход на позиции. Создаёт пространство для команды. Его смелые ходы часто становятся переломными в раундах.',
+      en: 'Aggressive entry player. Creates space and opportunities for the team. His bold moves often become turning points in rounds.',
+      et: 'Agressiivne entry mängija. Loob ruumi ja võimalusi meeskonnale. Tema julgeid käike muutuvad sageli vooru pöördepunktideks.' 
+    },
+    avatar:      null,
+    fullBio: {
+      ru: 'STORM — молодой талант, который быстро зарекомендовал себя как один из лучших entry-фрагеров в регионе. Его энергия и агрессия заражают всю команду.',
+      en: 'STORM is a young talent who quickly established himself as one of the best entry fraggers in the region. His energy and aggression inspire the entire team.',
+      et: 'STORM on noor talent, kes kiiresti tõestas end ühe parimana entry-frageri rollis regioonis. Tema energia ja agressiivsus nakatavad kogu meeskonda.'
+    }
   },
   {
     nickname:    'GHOST',
@@ -204,8 +243,17 @@ const players = [
     country:     'Estonia',
     countryFlag: '🇪🇪',
     age:         23,
-    desc:        { ru: 'Незаменимый саппорт. Обеспечивает команду гранатами и информацией.', en: 'Indispensable support. Provides the team with utility and information.', et: 'Asendamatu support. Varustab meeskonda utiliidi ja infoga.' },
-    avatar:      null
+    desc:        { 
+      ru: 'Незаменимый саппорт. Обеспечивает команду гранатами и информацией. Его игровое понимание позволяет команде играть как один организм.',
+      en: 'Indispensable support. Provides the team with utility and information. His game understanding allows the team to play as one organism.',
+      et: 'Asendamatu support. Varustab meeskonda utiliidi ja infoga. Tema mängumõistmine võimaldab meeskonnal mängida kui üks organism.' 
+    },
+    avatar:      null,
+    fullBio: {
+      ru: 'GHOST — опытный поддерживающий игрок с глубоким пониманием CS2. Его гранаты и позиционирование часто определяют исход раундов. Настоящий профессионал своего дела.',
+      en: 'GHOST is an experienced support player with deep understanding of CS2. His utility usage and positioning often determine round outcomes. A true professional.',
+      et: 'GHOST on kogenud support-mängija sügava CS2 mõistmisega. Tema utiliidi kasutamine ja positsioneerimine määravad sageli vooru tulemuse. Tõeline professionaal.'
+    }
   },
   {
     nickname:    'BLADE',
@@ -213,8 +261,53 @@ const players = [
     country:     'Lithuania',
     countryFlag: '🇱🇹',
     age:         21,
-    desc:        { ru: 'Универсальный рифлер. Высокий рейтинг и стабильная игра в любой ситуации.', en: 'Versatile rifler. High rating and consistent performance in any situation.', et: 'Mitmekülgne rifler. Kõrge reiting ja stabiilne mäng igas olukorras.' },
-    avatar:      null
+    desc:        { 
+      ru: 'Универсальный рифлер. Высокий рейтинг и стабильная игра в любой ситуации. Можно положиться на него в любой момент.',
+      en: 'Versatile rifler. High rating and consistent performance in any situation. You can rely on him at any moment.',
+      et: 'Mitmekülgne rifler. Kõrge reiting ja stabiilne mäng igas olukorras. Saad temale loota igal ajal.' 
+    },
+    avatar:      null,
+    fullBio: {
+      ru: 'BLADE — универсальный боец, который может играть на любой позиции и адаптироваться к любому стилю команды. Его консистентность делает его ценным членом состава.',
+      en: 'BLADE is a versatile fighter who can play any position and adapt to any team style. His consistency makes him a valuable member of the roster.',
+      et: 'BLADE on mitmekülgne võitleja, kes saab mängida iga positsiooni ja kohaneda iga meeskonna stiilile. Tema järjepidevus teeb temast väärtuslikku meeskonna liiget.'
+    }
+  },
+  {
+    nickname:    'NEXUS',
+    role:        'sub',
+    country:     'Poland',
+    countryFlag: '🇵🇱',
+    age:         19,
+    desc:        { 
+      ru: 'Перспективный заменщик. Молодой талант с огромным потенциалом. Готов в любой момент заменить основной состав.',
+      en: 'Promising substitute. Young talent with huge potential. Ready to replace the main roster at any moment.',
+      et: 'Lubav asendaja. Noor talent tohutute võimalustega. Valmis igal ajal asendama põhikoosseisu.' 
+    },
+    avatar:      null,
+    fullBio: {
+      ru: 'NEXUS — молодой игрок, который активно развивается и готовится к профессиональной карьере. Его потенциал огромен, и команда верит в его будущее. Постоянно тренируется и улучшает свои навыки.',
+      en: 'NEXUS is a young player who is actively developing and preparing for a professional career. His potential is huge, and the team believes in his future. Constantly trains and improves his skills.',
+      et: 'NEXUS on noor mängija, kes aktiivselt areneb ja valmistub professionaalse karjääri jaoks. Tema potentsiaal on tohutu ja meeskond usub tema tulevikku. Pidevalt treenib ja parandab oma oskusi.'
+    }
+  },
+  {
+    nickname:    'COACH ALEX',
+    role:        'coach',
+    country:     'Sweden',
+    countryFlag: '🇸🇪',
+    age:         28,
+    desc:        { 
+      ru: 'Главный тренер команды. Стратег с 10-летним опытом в киберспорте. Его тактики и подготовка определяют успех HRSHO.',
+      en: 'Head coach of the team. Strategist with 10 years of esports experience. His tactics and preparation determine HRSHO\'s success.',
+      et: 'Meeskonna peatreener. Strateegia 10 aasta espordi kogemusega. Tema taktika ja ettevalmistus määravad HRSHO edu.' 
+    },
+    avatar:      null,
+    fullBio: {
+      ru: 'COACH ALEX — опытный тренер, который привел множество команд к вершинам киберспорта. Его аналитические способности и понимание игры помогают HRSHO постоянно совершенствоваться. Работает над тактикой, физической подготовкой и психологической устойчивостью игроков.',
+      en: 'COACH ALEX is an experienced coach who has led many teams to the heights of esports. His analytical abilities and game understanding help HRSHO constantly improve. Works on tactics, physical fitness and psychological resilience of players.',
+      et: 'COACH ALEX on kogenud treener, kes on viinud paljusid meeskondi espordi tippu. Tema analüütilised võimed ja mängumõistmine aitavad HRSHO pidevalt parandada. Töötab taktika, füüsilise vormi ja mängijate psühholoogilise vastupidavuse kallal.'
+    }
   }
 ];
 
@@ -348,10 +441,78 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 });
 
 /* ============================================================
-   7. RENDER ROSTER
+   7. PLAYER MODAL SYSTEM
+   ============================================================ */
+function openPlayerModal(playerIndex) {
+  const player = players[playerIndex];
+  if (!player) return;
+
+  const t = translations[currentLang];
+  const roleLabel = t[getRoleKey(player.role)] || player.role.toUpperCase();
+  const desc = typeof player.desc === 'object' ? (player.desc[currentLang] || player.desc.en) : player.desc;
+  const fullBio = typeof player.fullBio === 'object' ? (player.fullBio[currentLang] || player.fullBio.en) : player.fullBio;
+
+  const modal = document.createElement('div');
+  modal.className = 'player-modal';
+  modal.innerHTML = `
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-header">
+        <div class="modal-avatar-wrap">
+          ${player.avatar 
+            ? `<img src="${player.avatar}" alt="${player.nickname}" class="modal-avatar" />` 
+            : `<div class="modal-avatar-placeholder"><i class="fas fa-user"></i></div>`}
+        </div>
+        <div class="modal-header-info">
+          <h2 class="modal-nickname">${player.nickname}</h2>
+          <div class="modal-role">${roleLabel}</div>
+          <div class="modal-meta">
+            <span>${player.countryFlag} ${player.country}</span>
+            <span>Age: ${player.age}</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>О игроке</h3>
+          <p>${desc}</p>
+        </div>
+        <div class="modal-section">
+          <h3>Полная биография</h3>
+          <p>${fullBio}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  modal.classList.add('active');
+
+  // Close on overlay click
+  modal.querySelector('.modal-overlay').addEventListener('click', () => closePlayerModal(modal));
+  modal.querySelector('.modal-close').addEventListener('click', () => closePlayerModal(modal));
+
+  // Close on Escape
+  const handleEscape = (e) => {
+    if (e.key === 'Escape') {
+      closePlayerModal(modal);
+      document.removeEventListener('keydown', handleEscape);
+    }
+  };
+  document.addEventListener('keydown', handleEscape);
+}
+
+function closePlayerModal(modal) {
+  modal.classList.remove('active');
+  setTimeout(() => modal.remove(), 300);
+}
+
+/* ============================================================
+   8. RENDER ROSTER
    ============================================================ */
 function getRoleKey(role) {
-  const map = { igl: 'role_igl', awp: 'role_awp', rifler: 'role_rifler', support: 'role_support', entry: 'role_entry' };
+  const map = { igl: 'role_igl', awp: 'role_awp', rifler: 'role_rifler', support: 'role_support', entry: 'role_entry', coach: 'role_coach', sub: 'role_sub' };
   return map[role] || role;
 }
 
@@ -368,7 +529,7 @@ function renderRoster(lang) {
       : `<div class="player-avatar-placeholder"><i class="fas fa-user"></i></div>`;
 
     return `
-      <div class="player-card reveal" style="transition-delay: ${i * 0.1}s">
+      <div class="player-card reveal clickable" style="transition-delay: ${i * 0.1}s" role="button" tabindex="0" data-player-index="${i}">
         <div class="player-avatar-wrap">
           ${avatarHtml}
           <div class="player-role-badge">${roleLabel}</div>
@@ -385,12 +546,27 @@ function renderRoster(lang) {
     `;
   }).join('');
 
+  // Add click listeners to player cards
+  document.querySelectorAll('.player-card.clickable').forEach(card => {
+    card.addEventListener('click', function() {
+      const index = this.getAttribute('data-player-index');
+      openPlayerModal(parseInt(index));
+    });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const index = this.getAttribute('data-player-index');
+        openPlayerModal(parseInt(index));
+      }
+    });
+  });
+
   // Re-observe new elements
   observeReveal();
 }
 
 /* ============================================================
-   8. RENDER ACHIEVEMENTS
+   9. RENDER ACHIEVEMENTS
    ============================================================ */
 function renderAchievements(lang) {
   const grid = document.getElementById('achievements-grid');
@@ -413,40 +589,56 @@ function renderAchievements(lang) {
 }
 
 /* ============================================================
-   9. RENDER SOCIAL LINKS
+   10. RENDER SOCIAL LINKS
    ============================================================ */
 function renderSocial() {
   const grid = document.getElementById('social-grid');
   if (!grid) return;
 
-  grid.innerHTML = socialLinks.map((s, i) => `
-    <a href="${s.url}" target="_blank" rel="noopener noreferrer"
-       class="social-btn reveal"
-       style="--social-color: ${s.color}; transition-delay: ${i * 0.07}s">
-      <i class="${s.icon}"></i>
-      <span>${s.name}</span>
+  grid.innerHTML = socialLinks.map(link => `
+    <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-btn" style="--social-color: ${link.color}">
+      <i class="${link.icon}"></i>
+      <span>${link.name}</span>
     </a>
   `).join('');
-
-  observeReveal();
 }
 
 /* ============================================================
-   10. CONTACT INFO
+   11. RENDER CONTACT
    ============================================================ */
 function renderContact() {
-  const discord = document.getElementById('contact-discord');
-  const email   = document.getElementById('contact-email');
-  const manager = document.getElementById('contact-manager');
-  if (discord) discord.textContent = contactInfo.discord;
-  if (email)   email.textContent   = contactInfo.email;
-  if (manager) manager.textContent = contactInfo.manager;
+  // Contact is static in HTML, no need to render
 }
 
 /* ============================================================
-   11. NAVBAR SCROLL
+   12. SCROLL ANIMATIONS (REVEAL ON SCROLL)
    ============================================================ */
-const navbar = document.getElementById('navbar');
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+function observeReveal() {
+  document.querySelectorAll('.reveal:not(.revealed)').forEach(el => observer.observe(el));
+  document.querySelectorAll('[class*="reveal-"]:not(.revealed)').forEach(el => observer.observe(el));
+}
+
+/* ============================================================
+   13. NAVBAR SCROLL EFFECT & MOBILE MENU
+   ============================================================ */
+const navbar = document.querySelector('.navbar');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
@@ -455,19 +647,16 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-/* ============================================================
-   12. HAMBURGER MENU
-   ============================================================ */
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('nav-links');
+// Hamburger menu toggle
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+}
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-});
-
-// Close menu on link click
-navLinks.querySelectorAll('.nav-link').forEach(link => {
+// Close menu when link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
     navLinks.classList.remove('open');
@@ -475,29 +664,9 @@ navLinks.querySelectorAll('.nav-link').forEach(link => {
 });
 
 /* ============================================================
-   13. INTERSECTION OBSERVER — REVEAL ANIMATIONS
+   14. PARTICLE ANIMATION
    ============================================================ */
-function observeReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-    if (!el.classList.contains('visible')) {
-      observer.observe(el);
-    }
-  });
-}
-
-/* ============================================================
-   14. PARTICLE CANVAS
-   ============================================================ */
-(function initParticles() {
+(() => {
   const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
@@ -619,7 +788,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height'));
+      const navHeight = 72; // var(--nav-height)
       const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
       window.scrollTo({ top, behavior: 'smooth' });
     }

@@ -222,8 +222,8 @@ const players = [
   {
     nickname:    'piuipp',
     role:        'entry',
-    country:     'Latvia',
-    countryFlag: '🇱🇻',
+    country:     'Estonia',
+    countryFlag: '🇪🇪',
     age:         20,
     desc:        { 
       ru: 'Агрессивный вход на позиции. Создаёт пространство для команды. Его смелые ходы часто становятся переломными.',
@@ -258,8 +258,8 @@ const players = [
   {
     nickname:    'Deeshka2',
     role:        'rifler',
-    country:     'Lithuania',
-    countryFlag: '🇱🇹',
+    country:     'Estonia',
+    countryFlag: '🇪🇪',
     age:         21,
     desc:        { 
       ru: 'Универсальный рифлер. Высокий рейтинг и стабильная игра в любой ситуации. Надежная опора команды.',
@@ -276,8 +276,8 @@ const players = [
   {
     nickname:    'Sancho_ON',
     role:        'sub',
-    country:     'Poland',
-    countryFlag: '🇵🇱',
+    country:     'Ukraine',
+    countryFlag: '🇺🇦',
     age:         19,
     desc:        { 
       ru: 'Перспективный заменщик. Молодой талант с огромным потенциалом. Готов усилить команду в любой момент.',
@@ -294,8 +294,8 @@ const players = [
   {
     nickname:    'Pito Poncho',
     role:        'coach',
-    country:     'Sweden',
-    countryFlag: '🇸🇪',
+    country:     'Estonia',
+    countryFlag: '🇪🇪',
     age:         28,
     desc:        { 
       ru: 'Главный стратег. Огромный опыт за плечами. Разрабатывает победные тактики и следит за дисциплиной.',
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rosterGrid.innerHTML = '';
     players.forEach((p, index) => {
       const card = document.createElement('div');
-      card.className = 'player-card reveal';
+      card.className = 'player-card reveal clickable';
       card.innerHTML = `
         <div class="player-avatar-wrap">
           <img src="${p.avatar}" alt="${p.nickname}" class="player-avatar" onerror="this.src='https://via.placeholder.com/300x400?text=HRSHO'">
@@ -392,10 +392,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="player-desc">${p.desc[currentLang]}</p>
         </div>
       `;
-      card.addEventListener('click', () => openModal(index));
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(index);
+      });
       rosterGrid.appendChild(card);
     });
-    // Trigger reveal after render
     setTimeout(revealElements, 100);
   }
 
@@ -405,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
     achGrid.innerHTML = '';
     achievements.forEach(a => {
       const card = document.createElement('div');
-      card.className = 'achievement-card reveal'; // Match style.css
+      card.className = 'achievement-card reveal';
       card.innerHTML = `
         <div class="ach-medal">${a.icon}</div>
         <h3 class="ach-place">${a.place}</h3>
@@ -438,7 +440,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Update Contact Section specifically
     const contactDiscord = document.getElementById('contact-discord');
     const contactEmail = document.getElementById('contact-email');
     const contactManager = document.getElementById('contact-manager');
@@ -447,7 +448,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactEmail) contactEmail.textContent = contactInfo.email;
     if (contactManager) contactManager.textContent = contactInfo.sponsor;
     
-    // Update "Founded" year in hero stats
     const foundedStat = document.querySelector('.hero-stat:last-child .stat-num');
     if (foundedStat) foundedStat.textContent = '2021';
   }
@@ -469,8 +469,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Mobile Menu ---
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open'); // Match style.css
-      navLinks.classList.toggle('open'); // Match style.css
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -483,8 +483,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Modal Logic ---
   const modal = document.createElement('div');
-  modal.className = 'player-modal'; // Match style.css
+  modal.className = 'player-modal';
   modal.id = 'player-modal';
+  modal.style.display = 'none'; // Hide by default to prevent blocking clicks
   modal.innerHTML = `
     <div class="modal-overlay"></div>
     <div class="modal-content glass-card">
@@ -537,12 +538,16 @@ document.addEventListener('DOMContentLoaded', () => {
     modalAge.textContent = `${p.age} years old`;
     modalBio.textContent = p.fullBio[currentLang];
     
-    modal.classList.add('active');
+    modal.style.display = 'flex'; // Show modal
+    setTimeout(() => modal.classList.add('active'), 10);
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     modal.classList.remove('active');
+    setTimeout(() => {
+      modal.style.display = 'none'; // Completely hide after transition
+    }, 300);
     document.body.style.overflow = 'auto';
   }
 
@@ -577,7 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const elementTop = el.getBoundingClientRect().top;
       const elementVisible = 100;
       if (elementTop < windowHeight - elementVisible) {
-        el.classList.add('revealed'); // Match style.css
+        el.classList.add('revealed');
       }
     });
   }

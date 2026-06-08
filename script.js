@@ -30,7 +30,7 @@ const translations = {
     about_text:         'HRSHO — киберспортивная команда по Counter-Strike 2, объединяющая игроков с высоким уровнем игры, дисциплиной и стремлением к победе. Мы не просто играем — мы доминируем на каждой карте, в каждом раунде.',
 
     feat1_title:        'Точность',
-    feat1_desc:         'Каждый выстрел — результат многочасовых тренировров',
+    feat1_desc:         'Каждый выстрел — результат многочасовых тренировок',
     feat2_title:        'Стратегия',
     feat2_desc:         'Тактическое превосходство на каждой карте',
     feat3_title:        'Командная работа',
@@ -321,7 +321,7 @@ const achievements = [
     icon:  '🏆'
   },
   {
-    title: { ru: 'CS2 Open League', en: 'CS2 Open League', et: 'CS2 Avatud Liiga' },
+    title: { ru: 'CS2 Open League', en: 'CS2 Open League', et: 'CS2 Avatud Лийга' },
     place: '2nd',
     icon:  '🥈'
   },
@@ -381,14 +381,13 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'player-card reveal';
       card.innerHTML = `
         <div class="player-avatar-wrap">
-          <img src="${p.avatar || 'https://via.placeholder.com/300x400?text=HRSHO'}" alt="${p.nickname}" class="player-avatar">
+          <img src="${p.avatar}" alt="${p.nickname}" class="player-avatar" onerror="this.src='https://via.placeholder.com/300x400?text=HRSHO'">
           <div class="player-role-badge">${translations[currentLang]['role_' + p.role]}</div>
         </div>
         <div class="player-info">
           <h3 class="player-nickname">${p.nickname}</h3>
           <div class="player-meta">
-            <span class="player-flag">${p.countryFlag}</span>
-            <span class="player-age">${p.age} y.o.</span>
+            <span class="player-country">${p.countryFlag} ${p.age} y.o.</span>
           </div>
           <p class="player-desc">${p.desc[currentLang]}</p>
         </div>
@@ -396,6 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card.addEventListener('click', () => openModal(index));
       rosterGrid.appendChild(card);
     });
+    // Trigger reveal after render
+    setTimeout(revealElements, 100);
   }
 
   // --- Initialize Achievements ---
@@ -404,9 +405,9 @@ document.addEventListener('DOMContentLoaded', () => {
     achGrid.innerHTML = '';
     achievements.forEach(a => {
       const card = document.createElement('div');
-      card.className = 'ach-card glass-card reveal';
+      card.className = 'achievement-card reveal'; // Match style.css
       card.innerHTML = `
-        <div class="ach-icon">${a.icon}</div>
+        <div class="ach-medal">${a.icon}</div>
         <h3 class="ach-place">${a.place}</h3>
         <p class="ach-title">${a.title[currentLang]}</p>
       `;
@@ -460,6 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       renderRoster();
       renderAchievements();
+      renderSocials();
       updateTexts();
     });
   });
@@ -467,43 +469,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Mobile Menu ---
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('open'); // Match style.css
+      navLinks.classList.toggle('open'); // Match style.css
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
       });
     });
   }
 
   // --- Modal Logic ---
   const modal = document.createElement('div');
-  modal.className = 'modal';
+  modal.className = 'player-modal'; // Match style.css
   modal.id = 'player-modal';
   modal.innerHTML = `
+    <div class="modal-overlay"></div>
     <div class="modal-content glass-card">
       <button class="modal-close">&times;</button>
-      <div class="modal-body">
-        <div class="modal-img-wrap">
+      <div class="modal-header">
+        <div class="modal-avatar-wrap">
           <img src="" alt="" id="modal-img">
         </div>
-        <div class="modal-info">
-          <div class="modal-header">
-            <h2 id="modal-nickname"></h2>
-            <span id="modal-role-badge" class="player-role-badge"></span>
-          </div>
+        <div class="modal-title-box">
+          <h2 id="modal-nickname"></h2>
+          <span id="modal-role-badge" class="modal-role"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
           <div class="modal-meta">
             <span id="modal-flag"></span>
             <span id="modal-country"></span>
             <span class="modal-sep">|</span>
             <span id="modal-age"></span>
           </div>
-          <div class="modal-bio">
-            <p id="modal-bio-text"></p>
-          </div>
+        </div>
+        <div class="modal-section">
+          <p id="modal-bio-text" class="modal-bio"></p>
         </div>
       </div>
     </div>
@@ -518,11 +523,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalAge = document.getElementById('modal-age');
   const modalBio = document.getElementById('modal-bio-text');
   const closeBtn = modal.querySelector('.modal-close');
+  const overlay = modal.querySelector('.modal-overlay');
 
   function openModal(index) {
     const p = players[index];
     if (!p) return;
-    modalImg.src = p.avatar || 'https://via.placeholder.com/300x400?text=HRSHO';
+    modalImg.src = p.avatar;
+    modalImg.onerror = () => { modalImg.src = 'https://via.placeholder.com/300x400?text=HRSHO'; };
     modalNickname.textContent = p.nickname;
     modalRole.textContent = translations[currentLang]['role_' + p.role];
     modalFlag.textContent = p.countryFlag;
@@ -540,9 +547,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
+  if (overlay) overlay.addEventListener('click', closeModal);
+  
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
@@ -551,7 +557,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
       if (target) {
         window.scrollTo({
           top: target.offsetTop - 70,
@@ -562,17 +570,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Reveal Animations ---
-  const revealElements = () => {
+  function revealElements() {
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => {
       const windowHeight = window.innerHeight;
       const elementTop = el.getBoundingClientRect().top;
       const elementVisible = 100;
       if (elementTop < windowHeight - elementVisible) {
-        el.classList.add('active');
+        el.classList.add('revealed'); // Match style.css
       }
     });
-  };
+  }
   window.addEventListener('scroll', revealElements);
 
   // --- Canvas Particles ---
@@ -598,7 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.size = Math.random() * 2 + 1;
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
-        this.alpha = Math.random() * 0.5 + 0.1;
+        this.opacity = Math.random() * 0.5 + 0.1;
       }
       update() {
         this.x += this.speedX;
@@ -608,7 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       draw() {
-        ctx.fillStyle = `rgba(255, 102, 0, ${this.alpha})`;
+        ctx.fillStyle = `rgba(255, 106, 0, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -617,11 +625,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
       particles = [];
-      for (let i = 0; i < 80; i++) {
+      const count = Math.min(Math.floor(window.innerWidth / 10), 100);
+      for (let i = 0; i < count; i++) {
         particles.push(new Particle());
       }
     }
-    initParticles();
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -631,13 +639,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       requestAnimationFrame(animate);
     }
+
+    initParticles();
     animate();
   }
 
-  // Initial render
+  // --- Initial Render ---
   renderRoster();
   renderAchievements();
   renderSocials();
   updateTexts();
-  revealElements();
+  setTimeout(revealElements, 500);
 });

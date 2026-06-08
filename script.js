@@ -188,7 +188,7 @@ const players = [
     role:        'igl',
     country:     'Estonia',
     countryFlag: '🇪🇪',
-    age:         22,
+    age:         26,
     desc:        { 
       ru: 'Капитан команды. Мастер тактики и принятия решений под давлением. Обладает уникальным видением игры.',
       en: 'Team captain. Master of tactics and decision-making under pressure. Possesses unique game vision.',
@@ -206,7 +206,7 @@ const players = [
     role:        'awp',
     country:     'Russia',
     countryFlag: '🇷🇺',
-    age:         21,
+    age:         26,
     desc:        { 
       ru: 'Снайпер с исключительной точностью. Лучший AWP-игрок команды. Его выстрелы — это искусство.',
       en: 'Sniper with exceptional accuracy. The team\'s premier AWP player. His shots are art.',
@@ -224,7 +224,7 @@ const players = [
     role:        'entry',
     country:     'Estonia',
     countryFlag: '🇪🇪',
-    age:         20,
+    age:         19,
     desc:        { 
       ru: 'Агрессивный вход на позиции. Создаёт пространство для команды. Его смелые ходы часто становятся переломными.',
       en: 'Aggressive entry player. Creates space and opportunities for the team. His bold moves are game-changers.',
@@ -278,7 +278,7 @@ const players = [
     role:        'sub',
     country:     'Ukraine',
     countryFlag: '🇺🇦',
-    age:         19,
+    age:         20,
     desc:        { 
       ru: 'Перспективный заменщик. Молодой талант с огромным потенциалом. Готов усилить команду в любой момент.',
       en: 'Promising substitute. Young talent with huge potential. Ready to strengthen the team at any moment.',
@@ -354,8 +354,8 @@ const socialLinks = [
    5. CONTACT INFO
    ============================================================ */
 const contactInfo = {
-  discord: 'MpYHgTeSxY',
-  email:   'hrsho@tuta.io',
+  discord: 'https://discord.gg/MpYHgTeSxY',
+  email:   'hrsho@internet.ru',
   sponsor: 'We are looking for a sponsor!'
 };
 
@@ -444,8 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactEmail = document.getElementById('contact-email');
     const contactManager = document.getElementById('contact-manager');
     
-    if (contactDiscord) contactDiscord.textContent = contactInfo.discord;
-    if (contactEmail) contactEmail.textContent = contactInfo.email;
+    if (contactDiscord) {
+      contactDiscord.innerHTML = `<a href="${contactInfo.discord}" target="_blank" style="color: inherit; text-decoration: none;">${contactInfo.discord.replace('https://', '')}</a>`;
+    }
+    if (contactEmail) {
+      contactEmail.innerHTML = `<a href="mailto:${contactInfo.email}" style="color: inherit; text-decoration: none;">${contactInfo.email}</a>`;
+    }
     if (contactManager) contactManager.textContent = contactInfo.sponsor;
     
     const foundedStat = document.querySelector('.hero-stat:last-child .stat-num');

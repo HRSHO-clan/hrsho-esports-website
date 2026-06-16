@@ -284,7 +284,7 @@ const players = [
       en: 'Promising substitute. Young talent with huge potential. Ready to strengthen the team at any moment.',
       et: 'Lubav asendaja. Noor talent tohutute võimalustega.' 
     },
-    avatar:      'avatar_sancho_on.png',
+    avatar:      'images/sancho_official.png',
     fullBio: {
       ru: 'Sancho_ON — молодой игрок, который активно развивается. Его потенциал огромен, и команда верит в его будущее.',
       en: 'Sancho_ON is a young player who is actively developing. His potential is huge, and the team believes in his future.',

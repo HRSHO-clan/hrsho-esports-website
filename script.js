@@ -212,7 +212,7 @@ const players = [
       en: 'Sniper with exceptional accuracy. The team\'s premier AWP player. His shots are art.',
       et: 'Snaiper erandliku täpsusega. Meeskonna parim AWP mängija. Tema laskud on kunst.' 
     },
-    avatar:      'avatar_zympleoo.png',
+    avatar:      'avatar_zympleoo.png?v=2',
     fullBio: {
       ru: 'ZympleOo — элита AWP-игроков. Его способность контролировать карту с помощью снайперской винтовки не имеет аналогов.',
       en: 'ZympleOo is the elite of AWP players. His ability to control the map with a sniper rifle is unparalleled.',
